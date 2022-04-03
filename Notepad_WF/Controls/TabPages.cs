@@ -11,16 +11,19 @@ namespace Notepad_WF
     {
         public TabPages(string title, string textboxText = "")
         {
-            this.Text = title;
+            this.Name = title;
             
+            this.Text = title;;
             Controls.Add(new TextBox() 
             { 
-                Size = new Size(this.Size.Width, this.Size.Height - 40),
+                Size = ClientSize,
                 Multiline = true,
                 Text = textboxText,
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right
             });
         }
-        public TabPages() : this($"NewTab{1}", "")
+
+        public TabPages() : this($"NewTab", "")
         {
 
         }
