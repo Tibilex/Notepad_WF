@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabPages.cs">
+    <Compile Include="Controls\TabPages.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="NotepadForm.resx">
