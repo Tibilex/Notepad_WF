@@ -10,18 +10,13 @@ namespace Notepad_WF
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         SaveFileDialog saveFileDialog1 = new SaveFileDialog();  
 
-        Image CloseImage;
-        Image AddImage;
-
-        //Point _imageLocation = new Point(20, 4);
-        Point imageHitArea = new Point(20, 4);
-
         public NotepadForm()
         {
             InitializeComponent(); 
             this.StartPosition = FormStartPosition.CenterScreen;
             customTabControl1.Controls.Add(new CustomTabPage());
             customTabControl1.Controls.Add(new CustomTabPage());
+            customTabControl1.Controls.Add(new CustomTabPage("test31333311314", "testwqewqewqeweq"));
         }
 
         private void NotepadForm_Load(object sender, EventArgs e)
@@ -29,12 +24,17 @@ namespace Notepad_WF
             this.Font = new Font("Gadugi", 10F, FontStyle.Regular);
             menuStrip1.Font = this.Font;
             menuStrip1.BackColor = Color.Coral;
-            
-            //CloseImage = Properties.Resources.Del;
-            //AddImage = Properties.Resources.Add;
-            //AddTab();
+
         }
 
-     
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            customTabControl1.TabPages.Add(new CustomTabPage($"NewTab{customTabControl1.TabCount + 1}"));
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            customTabControl1.TabPages.Remove(customTabControl1.SelectedTab);
+        }
     }
 }
