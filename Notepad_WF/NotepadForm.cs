@@ -16,7 +16,7 @@ namespace Notepad_WF
             this.StartPosition = FormStartPosition.CenterScreen;
             customTabControl1.Controls.Add(new CustomTabPage());
             customTabControl1.Controls.Add(new CustomTabPage());
-            customTabControl1.Controls.Add(new CustomTabPage("test", "test"));
+            customTabControl1.Controls.Add(new CustomTabPage("test31333311314", "testwqewqewqeweq"));
         }
 
         private void NotepadForm_Load(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace Notepad_WF
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            customTabControl1.TabPages.Add(new CustomTabPage());
+            customTabControl1.TabPages.Add(new CustomTabPage($"NewTab{customTabControl1.TabCount + 1}"));
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

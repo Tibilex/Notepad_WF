@@ -17,7 +17,8 @@ namespace Notepad_WF
             this.Name = title;
             this.BackColor = Color.Tomato;
             this.Text = title;
-            this.Font = new Font("Gadugi", 9F, FontStyle.Bold);
+            this.Font = new Font("Gadugi", 9F, FontStyle.Regular);
+            
 
             textBox = new TextBox()
             { 
