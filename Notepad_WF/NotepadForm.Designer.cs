@@ -33,9 +33,6 @@ namespace Notepad_WF
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customTabControl1 = new Notepad_WF.CustomTabControl();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +40,14 @@ namespace Notepad_WF
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customTabControl1 = new Notepad_WF.CustomTabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,31 +77,6 @@ namespace Notepad_WF
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fontSizeToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // tabToolStripMenuItem
-            // 
-            this.tabToolStripMenuItem.Name = "tabToolStripMenuItem";
-            this.tabToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.tabToolStripMenuItem.Text = "Tab";
-            // 
-            // customTabControl1
-            // 
-            this.customTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customTabControl1.Font = new System.Drawing.Font("Gadugi", 10F);
-            this.customTabControl1.ItemSize = new System.Drawing.Size(80, 20);
-            this.customTabControl1.Location = new System.Drawing.Point(0, 24);
-            this.customTabControl1.Name = "customTabControl1";
-            this.customTabControl1.SelectedIndex = 0;
-            this.customTabControl1.Size = new System.Drawing.Size(1008, 705);
-            this.customTabControl1.TabIndex = 1;
-            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
@@ -113,6 +88,7 @@ namespace Notepad_WF
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createToolStripMenuItem.Text = "Create";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -131,6 +107,7 @@ namespace Notepad_WF
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
@@ -144,6 +121,14 @@ namespace Notepad_WF
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontSizeToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
             // fontSizeToolStripMenuItem
             // 
             this.fontSizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -152,32 +137,50 @@ namespace Notepad_WF
             this.toolStripMenuItem4,
             this.toolStripMenuItem5});
             this.fontSizeToolStripMenuItem.Name = "fontSizeToolStripMenuItem";
-            this.fontSizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fontSizeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.fontSizeToolStripMenuItem.Text = "Font size";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(102, 22);
             this.toolStripMenuItem2.Text = "50%";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(102, 22);
             this.toolStripMenuItem3.Text = "100%";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(102, 22);
             this.toolStripMenuItem4.Text = "150%";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(102, 22);
             this.toolStripMenuItem5.Text = "200%";
+            // 
+            // tabToolStripMenuItem
+            // 
+            this.tabToolStripMenuItem.Name = "tabToolStripMenuItem";
+            this.tabToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.tabToolStripMenuItem.Text = "Tab";
+            // 
+            // customTabControl1
+            // 
+            this.customTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.customTabControl1.Font = new System.Drawing.Font("Gadugi", 10F);
+            this.customTabControl1.ItemSize = new System.Drawing.Size(80, 20);
+            this.customTabControl1.Location = new System.Drawing.Point(0, 24);
+            this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.SelectedIndex = 0;
+            this.customTabControl1.Size = new System.Drawing.Size(1008, 705);
+            this.customTabControl1.TabIndex = 1;
             // 
             // NotepadForm
             // 

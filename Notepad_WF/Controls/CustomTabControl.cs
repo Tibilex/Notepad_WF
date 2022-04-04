@@ -20,6 +20,7 @@ namespace Notepad_WF
             this.Font = new Font("Gadugi", 10F, FontStyle.Regular);
             this.SelectedIndex = 0;
             this.Name = "TabControl";
+            
 
             DrawItem += CustomTabControl_DrawItem;
             MouseClick += CustomTabControl_MouseClick;
@@ -27,15 +28,16 @@ namespace Notepad_WF
 
         private void CustomTabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
-            var tabPage = TabPages[e.Index];
+            TabPage tabPage = TabPages[e.Index];
             Rectangle rect = GetTabRect(e.Index);
-            rect.Inflate(-2, -2);
+            rect.Offset(-2, -2);
 
             var closeImage = Properties.Resources.Del;
             SolidBrush pen = new SolidBrush(Color.Black);
+            string text = this.TabPages[e.Index].Text;
 
-            e.Graphics.DrawImage(closeImage,(rect.Right - closeImage.Width), rect.Top + (rect.Height - closeImage.Height) / 2);
-            e.Graphics.DrawString(tabPage.Text, this.Font, pen, new PointF(rect.X, rect.Y));
+            e.Graphics.DrawImage(closeImage, rect.Right - closeImage.Width, rect.Y + 5);
+            e.Graphics.DrawString(text, this.Font, pen, new PointF(rect.X + 3, rect.Y + 3));
             
         }
         private void CustomTabControl_MouseClick(object sender, MouseEventArgs e)
