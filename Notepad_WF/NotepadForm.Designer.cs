@@ -82,6 +82,7 @@ namespace Notepad_WF
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // createToolStripMenuItem
             // 
@@ -178,6 +179,7 @@ namespace Notepad_WF
             this.customTabControl1.ItemSize = new System.Drawing.Size(80, 20);
             this.customTabControl1.Location = new System.Drawing.Point(0, 24);
             this.customTabControl1.Name = "customTabControl1";
+            this.customTabControl1.Padding = new System.Drawing.Point(17, 2);
             this.customTabControl1.SelectedIndex = 0;
             this.customTabControl1.Size = new System.Drawing.Size(1008, 705);
             this.customTabControl1.TabIndex = 1;

@@ -14,9 +14,6 @@ namespace Notepad_WF
         {
             InitializeComponent(); 
             this.StartPosition = FormStartPosition.CenterScreen;
-            customTabControl1.Controls.Add(new CustomTabPage());
-            customTabControl1.Controls.Add(new CustomTabPage());
-            customTabControl1.Controls.Add(new CustomTabPage("test31333311314", "testwqewqewqeweq"));
         }
 
         private void NotepadForm_Load(object sender, EventArgs e)
@@ -36,5 +33,15 @@ namespace Notepad_WF
         {
             customTabControl1.TabPages.Remove(customTabControl1.SelectedTab);
         }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog1.ShowDialog();
+            string text = File.ReadAllText(openFileDialog1.FileName);
+            customTabControl1.Controls.Add(new CustomTabPage(Path.GetFileName(openFileDialog1.FileName), text));
+
+        }
+
     }
 }
