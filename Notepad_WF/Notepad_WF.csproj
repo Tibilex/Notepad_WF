@@ -50,6 +50,9 @@
     <Compile Include="Controls\CustomTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\Menustrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NotepadForm.cs">
       <SubType>Form</SubType>
     </Compile>

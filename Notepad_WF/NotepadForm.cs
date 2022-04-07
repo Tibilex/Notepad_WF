@@ -11,23 +11,36 @@ namespace Notepad_WF
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         SaveFileDialog saveFileDialog1 = new SaveFileDialog();
         ToolStrip toolStrip = new ToolStrip();
+        Menustrip menustrip;
 
         public NotepadForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            toolStrip.Location = new Point(0, 48);
-            AddIconBar();
+            this.Font = new Font("Gadugi", 10F, FontStyle.Regular);
+
             toolStrip.Visible = false;
         }
 
         #region - Events -
         private void NotepadForm_Load(object sender, EventArgs e)
         {
-            this.Font = new Font("Gadugi", 10F, FontStyle.Regular);
-            menuStrip1.Font = this.Font;
-            menuStrip1.BackColor = Color.Coral;
+            AddIconBar();
 
+            menustrip = new Menustrip(this);
+            menustrip.New.Click += new EventHandler(NewTab);
+            menustrip.Open.Click += new EventHandler(Open);
+            //menustrip.Save.Click += new EventHandler(Save);
+            menustrip.SaveAll.Click += new EventHandler(SaveAs);
+            menustrip.Close.Click += new EventHandler(Close);
+            menustrip.CloseAll.Click += new EventHandler(CloseAll);
+            menustrip.Exit.Click += new EventHandler(Exit);
+            menustrip.FontSize50.Click += new EventHandler(FontSize50);
+            menustrip.FontSize100.Click += new EventHandler(FontSize100);
+            menustrip.FontSize150.Click += new EventHandler(FontSize150);
+            menustrip.FontSize200.Click += new EventHandler(FontSize200);
+            menustrip.Enable.Click += new EventHandler(EnableIconMenu);
+            menustrip.Disable.Click += new EventHandler(DisableIconMenu);
         }
 
         // Open file and add to new tab
@@ -135,14 +148,7 @@ namespace Notepad_WF
             toolStrip.Items.Add("", Properties.Resources.SaveBlue, SaveAs);
             toolStrip.Items.Add("", Properties.Resources.CloseBlue, Close);
             toolStrip.Items.Add("", Properties.Resources.CloseallBlue, CloseAll);
-            //toolStrip.Items.Add("", Properties.Resources.Print, Print);
             toolStrip.Items.Add(new ToolStripSeparator());
-            //toolStrip.Items.Add("", Properties.Resources.Cut, Cut);
-            //toolStrip.Items.Add("", Properties.Resources.Copy, Copy);
-            //toolStrip.Items.Add("", Properties.Resources.Paste, Paste);
-            //toolStrip.Items.Add(new ToolStripSeparator());
-            //toolStrip.Items.Add("", Properties.Resources.Undo, Undo);
-            //toolStrip.Items.Add("", Properties.Resources.Redo, Redo);
             Controls.Add(toolStrip);
         }
 
