@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Notepad_WF.Controls
@@ -46,6 +43,7 @@ namespace Notepad_WF.Controls
             e.Graphics.DrawImage(img, rect.Right - img.Width, rect.Y + 5);
             e.Graphics.DrawString(text, this.Font, pen, new PointF(rect.X + 3, rect.Y + 3));
         }
+
         private void CustomTabControl_MouseClick(object sender, MouseEventArgs e)
         {
             TabControl tabControl = sender as TabControl;

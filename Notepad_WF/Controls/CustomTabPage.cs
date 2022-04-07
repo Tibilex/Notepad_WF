@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Notepad_WF.Controls
@@ -37,7 +33,6 @@ namespace Notepad_WF.Controls
                 Font = new Font("Gadugi", 10F, FontStyle.Regular),
             };
             Controls.Add(textBox);
-            //saveFile.FileOk += new System.ComponentModel.CancelEventHandler(this.Rename);
         }
 
         public CustomTabPage() : this("NewTab", "")
