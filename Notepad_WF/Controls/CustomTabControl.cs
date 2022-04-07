@@ -4,11 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Notepad_WF
+namespace Notepad_WF.Controls
 {
     class CustomTabControl : TabControl
     {
-
         public CustomTabControl()
         {
             this.Dock = DockStyle.Fill;

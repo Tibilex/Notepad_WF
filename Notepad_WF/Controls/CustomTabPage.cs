@@ -5,11 +5,17 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Notepad_WF
+namespace Notepad_WF.Controls
 {
     class CustomTabPage : TabPage
     {
         TextBox textBox;
+
+        public TextBox TextBox
+        {
+            get { return textBox; }
+            set { textBox = value; }
+        }
         //SaveFileDialog saveFileDialog;
 
         public CustomTabPage(string title, string textboxText = "")
