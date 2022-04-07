@@ -93,5 +93,32 @@
   <ItemGroup>
     <None Include="Resources\Del.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseallBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedoBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextFileblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UndoBlue.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

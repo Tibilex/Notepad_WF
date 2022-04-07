@@ -214,7 +214,7 @@ namespace Notepad_WF
             // 
             this.enableToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.enableToolStripMenuItem.Name = "EnableIconMenu";
-            this.enableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enableToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.enableToolStripMenuItem.Text = "Enable";
             this.enableToolStripMenuItem.Click += new System.EventHandler(this.EnableIconMenu);
             // 
@@ -222,7 +222,7 @@ namespace Notepad_WF
             // 
             this.disableToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
             this.disableToolStripMenuItem.Name = "DisableIconMenu";
-            this.disableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.disableToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.disableToolStripMenuItem.Text = "Disable";
             this.disableToolStripMenuItem.Click += new System.EventHandler(this.DisableIconMenu);
             // 

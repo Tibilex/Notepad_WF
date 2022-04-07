@@ -37,7 +37,6 @@ namespace Notepad_WF.Controls
                 Font = new Font("Gadugi", 10F, FontStyle.Regular),
             };
             Controls.Add(textBox);
-            //saveFile.FileOk += new System.ComponentModel.CancelEventHandler(this.Rename);
         }
 
         public CustomTabPage() : this("NewTab", "")

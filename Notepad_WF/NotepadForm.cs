@@ -16,6 +16,9 @@ namespace Notepad_WF
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            toolStrip.Location = new Point(0, 48);
+            AddIconBar();
+            toolStrip.Visible = false;
         }
 
         #region - Events -
@@ -85,7 +88,7 @@ namespace Notepad_WF
             }
         }
         // Text font size 50%
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void FontSize50(object sender, EventArgs e)
         {
             foreach(CustomTabPage it in customTabControl1.TabPages)
             {
@@ -93,7 +96,7 @@ namespace Notepad_WF
             }
         }
         // Text font size 100%
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void FontSize100(object sender, EventArgs e)
         {
             foreach (CustomTabPage it in customTabControl1.TabPages)
             {
@@ -101,7 +104,7 @@ namespace Notepad_WF
             }
         }
         // Text font size 150%
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        private void FontSize150(object sender, EventArgs e)
         {
             foreach (CustomTabPage it in customTabControl1.TabPages)
             {
@@ -109,7 +112,7 @@ namespace Notepad_WF
             }
         }
         // Text font size 200%
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        private void FontSize200(object sender, EventArgs e)
         {
             foreach (CustomTabPage it in customTabControl1.TabPages)
             {
@@ -117,27 +120,21 @@ namespace Notepad_WF
             }
         }
 
-        private void EnableIconMenu(object sender, EventArgs e)
-        {
+        private void EnableIconMenu(object sender, EventArgs e) { toolStrip.Visible = true; }
+        private void DisableIconMenu(object sender, EventArgs e) { toolStrip.Visible = false; }
 
-        }
-
-        private void DisableIconMenu(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         #region - Methods -
 
         private void AddIconBar()
         {
-            toolStrip.Items.Add("", Properties.Resources.New, NewTab);
-            toolStrip.Items.Add("", Properties.Resources.Open, Open);
+            toolStrip.Items.Add("", Properties.Resources.AddBlue, NewTab);
+            toolStrip.Items.Add("", Properties.Resources.OpenBlue, Open);
             //toolStrip.Items.Add("", Properties.Resources.Save, Save);
-            toolStrip.Items.Add("", Properties.Resources.SaveAll, SaveAs);
-            toolStrip.Items.Add("", Properties.Resources.Close, Close);
-            toolStrip.Items.Add("", Properties.Resources.CloseAll, CloseAll);
+            toolStrip.Items.Add("", Properties.Resources.SaveBlue, SaveAs);
+            toolStrip.Items.Add("", Properties.Resources.CloseBlue, Close);
+            toolStrip.Items.Add("", Properties.Resources.CloseallBlue, CloseAll);
             //toolStrip.Items.Add("", Properties.Resources.Print, Print);
             toolStrip.Items.Add(new ToolStripSeparator());
             //toolStrip.Items.Add("", Properties.Resources.Cut, Cut);

@@ -121,10 +121,37 @@
   <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AddBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseallBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseallBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Del" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="form_name" xml:space="preserve">
     <value>Notepad</value>
+  </data>
+  <data name="menuBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OpenBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OpenBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RedoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RedoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TextFileblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TextFileblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UndoBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UndoBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
