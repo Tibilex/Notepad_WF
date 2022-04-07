@@ -4,11 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Notepad_WF
+namespace Notepad_WF.Controls
 {
     class CustomTabControl : TabControl
     {
-
         public CustomTabControl()
         {
             this.Dock = DockStyle.Fill;
@@ -24,6 +23,8 @@ namespace Notepad_WF
 
             DrawItem += CustomTabControl_DrawItem;
             MouseClick += CustomTabControl_MouseClick;
+
+            this.Controls.Add(new CustomTabPage($"NewTab{this.TabIndex}"));
         }
 
 
@@ -59,7 +60,7 @@ namespace Notepad_WF
 
             if (this.SelectedIndex == this.TabPages.Count - 1)
             {
-                this.TabPages.Add(new CustomTabPage($"NewTab{this.SelectedIndex}"));
+                this.TabPages.Add(new CustomTabPage($"NewTab{this.SelectedIndex + 1}"));
             }
             else
             {
