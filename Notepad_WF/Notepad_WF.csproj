@@ -123,5 +123,26 @@
   <ItemGroup>
     <None Include="Resources\UndoBlue.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save2Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CutBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasteBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CopyBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DelBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectAllBlue.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

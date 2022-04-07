@@ -24,6 +24,10 @@ namespace Notepad_WF.Controls
         public ToolStripMenuItem Enable;
         public ToolStripMenuItem Disable;
 
+        public ToolStripMenuItem Undo;
+        public ToolStripMenuItem Redo;
+
+
         public Menustrip(NotepadForm form)
         {
             this.Font = form.Font;
@@ -36,9 +40,9 @@ namespace Notepad_WF.Controls
                 New = new ToolStripMenuItem("New Tab"),
                 Open = new ToolStripMenuItem("Open"),
                 Save = new ToolStripMenuItem("Save"),
-                SaveAll = new ToolStripMenuItem("Save All"),
+                SaveAll = new ToolStripMenuItem("Save as"),
                 Close = new ToolStripMenuItem("Close"),
-                CloseAll = new ToolStripMenuItem("Close All"),
+                CloseAll = new ToolStripMenuItem("Close all"),
                 Exit = new ToolStripMenuItem("Exit")
             });
 
@@ -51,7 +55,7 @@ namespace Notepad_WF.Controls
             View.DropDownItems.AddRange(new ToolStripItem[]
             {
                 FontSize = new ToolStripMenuItem("Font Size"),
-                IconsMenu = new ToolStripMenuItem("Navigation Bar")
+                IconsMenu = new ToolStripMenuItem("Icons Bar")
             });
 
             FontSize.DropDownItems.AddRange(new ToolStripItem[] 

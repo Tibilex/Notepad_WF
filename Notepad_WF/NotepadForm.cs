@@ -30,7 +30,7 @@ namespace Notepad_WF
             menustrip = new Menustrip(this);
             menustrip.New.Click += new EventHandler(NewTab);
             menustrip.Open.Click += new EventHandler(Open);
-            //menustrip.Save.Click += new EventHandler(Save);
+            menustrip.Save.Click += new EventHandler(Save);
             menustrip.SaveAll.Click += new EventHandler(SaveAs);
             menustrip.Close.Click += new EventHandler(Close);
             menustrip.CloseAll.Click += new EventHandler(CloseAll);
@@ -43,6 +43,12 @@ namespace Notepad_WF
             menustrip.Disable.Click += new EventHandler(DisableIconMenu);
         }
 
+        // Create new tab
+        private void NewTab(object sender, EventArgs e)
+        {
+            customTabControl1.TabPages.Add(new CustomTabPage($"NewTab{customTabControl1.TabCount + 1}"));
+        }
+
         // Open file and add to new tab
         private void Open(object sender, EventArgs e)
         {
@@ -52,22 +58,20 @@ namespace Notepad_WF
             customTabControl1.Controls.Add(new CustomTabPage(Path.GetFileName(openFileDialog1.FileName), text));
         }
 
-        // Close current tab
-        private void Close(object sender, EventArgs e)
+        // Save chenges
+        private void Save(object sender,EventArgs e)
         {
-            customTabControl1.TabPages.Remove(customTabControl1.SelectedTab);
-        }
-
-        // Create new tab
-        private void NewTab(object sender, EventArgs e)
-        {
-            customTabControl1.TabPages.Add(new CustomTabPage($"NewTab{customTabControl1.TabCount + 1}"));
-        }
-
-        // Close all tabs
-        private void CloseAll(object sender, EventArgs e)
-        {
-            customTabControl1.TabPages.Clear();
+            CustomTabPage tabPage = (CustomTabPage)customTabControl1.SelectedTab;
+            if (tabPage.TextBox.Text != "")
+            {
+                string path = openFileDialog1.FileName;
+                if (path != "")
+                {
+                    File.WriteAllText(path, tabPage.TextBox.Text);
+                    string[] array = path.Split('\\');
+                    tabPage.Text = array[array.Length - 1];
+                }
+            }
         }
 
         // Save to file
@@ -89,6 +93,19 @@ namespace Notepad_WF
                 }
                 saveFileDialog1.Reset();
             }
+        }
+
+        // Close current tab
+        private void Close(object sender, EventArgs e)
+        {
+            customTabControl1.TabPages.Remove(customTabControl1.SelectedTab);
+        }
+
+
+        // Close all tabs
+        private void CloseAll(object sender, EventArgs e)
+        {
+            customTabControl1.TabPages.Clear();
         }
 
         // Exit
@@ -135,6 +152,13 @@ namespace Notepad_WF
 
         private void EnableIconMenu(object sender, EventArgs e) { toolStrip.Visible = true; }
         private void DisableIconMenu(object sender, EventArgs e) { toolStrip.Visible = false; }
+        private void Undo(object sender, EventArgs e) { SendKeys.Send("^z"); }
+        private void Redo(object sender, EventArgs e) { SendKeys.Send("^y"); }
+        private void Cut(object sender, EventArgs e) { SendKeys.Send("^x"); }
+        private void Copy(object sender, EventArgs e) { SendKeys.Send("^c"); }
+        private void Paste(object sender, EventArgs e) { SendKeys.Send("^v"); }
+        private void Delete(object sender, EventArgs e) { SendKeys.Send("{DELETE}"); }
+        private void SelectAll(object sender, EventArgs e) { SendKeys.Send("^a"); }
 
         #endregion
 
@@ -144,11 +168,23 @@ namespace Notepad_WF
         {
             toolStrip.Items.Add("", Properties.Resources.AddBlue, NewTab);
             toolStrip.Items.Add("", Properties.Resources.OpenBlue, Open);
-            //toolStrip.Items.Add("", Properties.Resources.Save, Save);
+            toolStrip.Items.Add("", Properties.Resources.Save2Blue, Save);
             toolStrip.Items.Add("", Properties.Resources.SaveBlue, SaveAs);
             toolStrip.Items.Add("", Properties.Resources.CloseBlue, Close);
             toolStrip.Items.Add("", Properties.Resources.CloseallBlue, CloseAll);
             toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add("", Properties.Resources.CopyBlue, Copy);
+            toolStrip.Items.Add("", Properties.Resources.PasteBlue, Paste);
+            toolStrip.Items.Add("", Properties.Resources.SelectAllBlue, SelectAll);
+            toolStrip.Items.Add("", Properties.Resources.CutBlue, Cut);
+            toolStrip.Items.Add("", Properties.Resources.DelBlue, Delete);
+            toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add(new ToolStripSeparator());
+            toolStrip.Items.Add("", Properties.Resources.UndoBlue, Undo);
+            toolStrip.Items.Add("", Properties.Resources.RedoBlue, Redo);
+            toolStrip.Items.Add(new ToolStripSeparator());
+
             Controls.Add(toolStrip);
         }
 
